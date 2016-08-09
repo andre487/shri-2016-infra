@@ -4,289 +4,369 @@ layout: default
 
 ---
 
-# Яндекс
+# &nbsp;
+
+<img src="pictures/hand.png" height="100%">
 
 ## **{{ site.presentation.title }}** {#cover}
 
-<div class="s">
-    <div class="service">{{ site.presentation.service }}</div>
-</div>
-
-{% if site.presentation.nda %}
-<div class="nda"></div>
-{% endif %}
-
 <div class="info">
-	<p class="author">{{ site.author.name }}, <br/> {{ site.author.position }}</p>
+	<p class="author">{{ site.author.name }}</p>
 </div>
 
-## Верхний колонтитул
+## Инфраструктура
+
+<center>
+  <img src="pictures/roads.jpg">
+</center>
+
+## История проекта
+
+![](pictures/floppy.jpg){:.right-image}
+
+Один стартап, магазин дискет
+
+## История проекта
+
+### Стадия 1
+
+<img src="pictures/story-01.jpg" class="right-image" style="width: 400px; height: auto">
+
+  * Один разработчик
+  * Один сервер
+  * Код в репозитории на GitHub
+
+## История проекта
+
+### Стадия 1
+
+  * `npm test`
+  * `git merge feature && git push origin master`
+  * `ssh floppy.shop`
+  * `git pull origin master`
+  * `make && make install`
+
+## История проекта
+
+### Стадия 2
+
+<img src="pictures/story-02.1.jpg" class="right-image" style="width: 400px; height: auto">
+
+Нужно больше фич. Добавляются разработчики
+
+  * Каждому нужно настраивать окружение
+  * Никто не должен забывать про тесты
+  * Нужно договариваться о деплое
+
+## История проекта
+
+### Стадия 2
+
+<img src="pictures/story-02.2.jpg" class="right-image" style="width: 400px; height: auto">
+
+  * Vagrant – виртуальные окружения
+  * Merge только через пулл-реквесты
+  * Код-ревью пулл-реквестов
+  * Continuous Integration – проверки, тесты
+  * Continuous Deployment
+
+## История проекта
+
+### Стадия 3
+
+<img src="pictures/story-03.1.jpg" class="right-image" style="width: 400px; height: auto">
+
+Нагрузка выросла
+
+Единственный сервер не справляется
+
+## История проекта
+
+### Стадия 3
+
+<img src="pictures/story-03.2.jpg" class="right-image" style="width: 400px; height: auto">
+
+Добавили 4 сервера
+
+В скрипте деплоя операция в цикле
+
+## История проекта
+
+### Стадия 4
+
+<img src="pictures/story-04.1.jpg" class="right-image" style="width: 400px; height: auto">
+
+Печаль-беда, откатываем релиз!
+
+О_о
+
+  * `ssh serv1.floppy.shop`
+  * `git checkout 4f230ff`
+  * `make && make install`
+
+И это на всех серверах
+
+## История проекта
+
+### Стадия 4
+
+<img src="pictures/story-04.2.jpg" class="right-image" style="width: 400px; height: auto">
+
+Автоматизация отката релиза
+
+Версионирование релизов
+
+## История проекта
+
+### Стадия 5
+
+<img src="pictures/story-05.1.jpg" class="right-image" style="width: 400px; height: auto">
+
+Слушайте, а у нас 2 сервера лежат уже 3 дня…
+
+## История проекта
+
+### Стадия 5
+
+<img src="pictures/story-05.2.jpg" class="right-image" style="width: 400px; height: auto">
+
+Мониторинг с оповещениями
+
+## И жили они долго и счастливо
+{:.screen-shot}
+
+<center>
+  <img src="pictures/story-ending.jpg" height="540">
+</center>
+
+## &nbsp;
 {:.section}
 
-### Название раздела
+### Задачи инфраструктуры
 
-## Заголовок
+## Задачи инфраструктуры
 
-### Вводный текст (первый уровень текста)
-
-*  Второй уровень текста
-	* Третий уровень текста (буллиты)
-
-	1. Четвертый уровень текста
-
-## Заголовок
-
-### Вводный текст (первый уровень текста)
-![placeholder](pictures/vertical-placeholder.png){:.right-image}
-
-*  Второй уровень текста
-	* Третий уровень текста (буллиты)
-	* Третий уровень текста (буллиты)
-
-	1. Четвертый уровень текста
+  * Хостинг
+  * Инструментарий разработки
+  * Корректная интеграция изменений
+  * Быстрая доставка фич
+  * Релизный цикл с возможностью отката
+  * Мониторинг здоровья сервиса
 
 ## &nbsp;
-{:.with-big-quote}
-> Цитата
+{:.section}
 
-Текст
-{:.note}
+### Хостинг
 
-## Пример подсветки кода на JavaScript
+## Хостинг
 
-~~~ javascript
-!function() {
-    var jar,
-        rstoreNames = /[^\w]/g,
-        storageInfo = window.storageInfo || window.webkitStorageInfo,
-        toString = "".toString;
-
-    jar = this.jar = function( name, storage ) {
-        return new jar.fn.init( name, storage );
-    };
-
-    jar.storages = [];
-    jar.instances = {};
-    jar.prefixes = {
-        storageInfo: storageInfo
-    };
-
-    jar.prototype = this.jar.fn = {
-        constructor: jar,
-
-        version: 0,
-
-        storages: [],
-        support: {},
-
-        types: [ "xml", "html", "javascript", "js", "css", "text", "json" ],
-
-        init: function( name, storage ) {
-
-            // Name of a object store must contain only alphabetical symbols or low dash
-            this.name = name ? name.replace( rstoreNames, "_" ) : "jar";
-            this.deferreds = {};
-
-            if ( !storage ) {
-                this.order = jar.order;
-            }
-
-            // TODO – add support for aliases
-            return this.setup( storage || this.storages );
-        },
-
-        // Setup for all storages
-        setup: function( storages ) {
-            this.storages = storages = storages.split ? storages.split(" ") : storages;
-
-            var storage,
-                self = this,
-                def = this.register(),
-                rejects = [],
-                defs = [];
-
-            this.stores = jar.instances[ this.name ] || {};
-
-            // Jar store meta-info in lc, if we don't have it – reject call
-            if ( !window.localStorage ) {
-                window.setTimeout(function() {
-                    def.reject();
-                });
-                return this;
-            }
-
-            // Initiate all storages that we can work with
-            for ( var i = 0, l = storages.length; i < l; i++ ) {
-                storage = storages[ i ];
-
-                // This check needed if user explicitly specified storage that
-                // he wants to work with, whereas browser don't implement it
-                if ( jar.isUsed( storage ) ) {
-
-                    // If jar with the same name was created, do not try to re-create store
-                    if ( !this.stores[ storage ] ) {
-
-                        // Initiate storage
-                        defs.push( this[ storage ]( this.name, this ) );
-
-                        // Initiate meta-data for this storage
-                        this.log( storage );
-                    }
-
-                } else {
-                    rejects.push( storage );
-                }
-            }
-
-            if ( !this.order ) {
-                this.order = {};
-
-                for ( i = 0, l = this.types.length; i < l; i++ ) {
-                    this.order[ this.types[ i ] ] = storages;
-                }
-            }
-
-            if ( rejects.length == storages.length ) {
-                window.setTimeout(function() {
-                    def.reject();
-                });
-
-            } else {
-                jar.when.apply( this, defs )
-                    .done(function() {
-                        jar.instances[ this.name ] = this.stores;
-
-                        window.setTimeout(function() {
-                            def.resolve([ self ]);
-                        });
-                    })
-                    .fail(function() {
-                        def.reject();
-                    });
-            }
-            return this;
-        }
-    };
-
-    jar.fn.init.prototype = jar.fn;
-
-    jar.has = function( base, name ) {
-        return !!jar.fn.meta( name, base.replace( rstoreNames, "_" ) );
-    };
-}.call( window );
-~~~
-
-## Пример подсветки кода
-{:.code-with-text}
-
-Вводный текст
-
-~~~ javascript
-var jar,
-    rstoreNames = /[^\w]/g,
-    storageInfo = window.storageInfo || window.webkitStorageInfo,
-    toString = "".toString;
-
-jar = this.jar = function( name, storage ) {
-    return new jar.fn.init( name, storage );
-};
-~~~
+  * Реальное железо
+  * Облачные платформы:
+    * Infrastructure-as-a-Service – низкий уровень: машины, сети
+    * Platform-as-a-Service – высокий уровень: приложения, функции
 
 ## &nbsp;
-{:.big-code}
+{:.section}
 
-~~~ javascript
-!function() {
-    var jar,
-        rstoreNames = /[^\w]/g,
-        storageInfo = window.storageInfo || window.webkitStorageInfo,
-        toString = "".toString;
+### Инструментарий разработки
 
-    jar = this.jar = function( name, storage ) {
-        return new jar.fn.init( name, storage );
-    };
+## Инструментарий разработки
 
-    jar.storages = [];
-    jar.instances = {};
-    jar.prefixes = {
-        storageInfo: storageInfo
-    };
-}.call( window );
-~~~
+Разработчикам нужно совместно работать над кодом,
+нужно выполнять этот код
 
-## LaTeX
+  * Система и хостинг контроля версий:
+    * Git – GitHub, BitBucket, GitLab
+    * Mercurial – BitBucket
+  * Воссоздаваемое окружение
+    * Vagrant
+    * Otto
+    * Docker Compose
+  * Многое других направлений, тысячи их
 
-Библиотека для латекса довольно тяжелая, а нужна она в редких случаях.
-Поэтому она не включена в репу, ее нужно либо установить через bower либо иметь интернет.
+## &nbsp;
+{:.section}
 
-When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+### Интеграция изменений
 
-## Заголовок
-{:.images}
+## Интеграция изменений
 
-![](pictures/horizontal-placeholder.png)
-*Текст*
+Нужно понять, что изменения не вносят багов,
+прежде чем вливать в основную ветку
 
-![](pictures/horizontal-placeholder.png)
-*Текст*
+  * Continuous Integration
+    * Сборка
+    * Автоматизированные тесты
+    * Дополнение ручным тестированием:
+      * Выкладка проекта на тестовые сервера
+      * Ручное тестирование
+  * Continuous Deployment – дополнение выкладкой в бой
 
-![](pictures/horizontal-placeholder.png)
-*Текст*
+## Интеграция изменений
 
-## Заголовок
-{:.images .two}
+<table style="text-align: center">
+  <tr>
+    <td style="vertical-align: middle"><img src="pictures/travis-ci.png" width="120"></td>
+    <td style="vertical-align: middle"><img src="pictures/jenkins.png" width="120"></td>
+    <td style="vertical-align: middle"><img src="pictures/teamcity.jpg" width="120"></td>
+  </tr>
+  <tr style="padding: 10px !important">
+    <td>Travis CI</td>
+    <td>Jenkins</td>
+    <td>TeamCity</td>
+  </tr>
+</table>
 
-![](pictures/horizontal-middle-placeholder.png)
-*Текст*
+## &nbsp;
+{:.section}
 
-![](pictures/horizontal-middle-placeholder.png)
-*Текст*
+### Релизный цикл с возможностью отката
 
-## Заголовок
-{:.center}
+## Релизный цикл с возможностью отката
 
-![](pictures/horizontal-big-placeholder.png){:.tmp}
+Версионирование релизов
 
-## **![](pictures/cover-placeholder.png)**
+<center>
+  <img src="pictures/git-releases.png" height="450">
+</center>
 
-## ![](pictures/horizontal-cover-placeholder.png)
-{:.cover}
+## Релизный цикл с возможностью отката
 
-## Таблица
+<img src="pictures/shipit.png" width="400">
 
-|  Locavore      | Umami       | Helvetica | Vegan     |
-+----------------|-------------|-----------|-----------+
-| Fingerstache   | Kale        | Chips     | Keytar    |
-| Sriracha       | Gluten-free | Ennui     | Keffiyeh  |
-| Thundercats    | Jean        | Shorts    | Biodiesel |
-| Terry          | Richardson  | Swag      | Blog      |
-+----------------|-------------|-----------|-----------+
+[github.com/shipitjs/shipit](https://github.com/shipitjs/shipit)
+
+&nbsp;
+&nbsp;
+
+  * В проекте `shipitfile.js`
+  * Деплой: `shipit production deploy`
+  * Откат: `shipit production rollback`
+
+## Релизный цикл с возможностью отката
+
+![](pictures/heroku.jpg){:.right-image}
+
+На Heroku – Git для продакшен-кода:
+
+  * `heroku git:remote -a proj-id`
+  * `git push heroku master`
+
+## Релизный цикл с возможностью отката
+
+Пакеты операционных систем
+
+<center>
+  <img src="pictures/debian.png" width="500">
+</center>
+
+## &nbsp;
+{:.section}
+
+### Мониторинг проекта
+
+## Мониторинг проекта
+
+  * Проверка доступности сервиса
+  * Анализ показателей на предмет аномалий
+
+## Проверка доступности сервиса
+
+<img src="pictures/metrika-logo.jpg" height="80">
+
+[metrika.yandex.ru](https://metrika.yandex.ru)
+
+## Яндекс.Метрика
+{:.screen-shot}
+
+<img src="pictures/metrika.png" height="570">
+
+## Проверка доступности сервиса
+
+<img src="pictures/uptime-robot-logo.png">
+
+[uptimerobot.com](https://uptimerobot.com)
 
 
-## Таблица с дополнительным полем
+## Uptime Robot
+{:.screen-shot}
 
-{:.with-additional-line}
-|  Locavore      | Umami       | Helvetica | Vegan     |
-+----------------|-------------|-----------|-----------+
-| Fingerstache   | Kale        | Chips     | Keytar    |
-| Sriracha       | Gluten-free | Ennui     | Keffiyeh  |
-| Thundercats    | Jean        | Shorts    | Biodiesel |
-| Terry          | Richardson  | Swag      | Blog      |
-+----------------|-------------|-----------|-----------+
-| Terry          | Richardson  | Swag      | Blog      |
+<img src="pictures/uptime-robot.png" height="570">
 
-## **Контакты** {#contacts}
+## Анализ показателей на предмет аномалий
 
-<div class="info">
-<p class="author">{{ site.author.name }}</p>
-<p class="position">{{ site.author.position }}</p>
+<img src="pictures/okmeter-logo.png" height="70" style="transform: translate(-30px)">
 
-    <div class="contacts">
-        <p class="contacts-left contacts-top phone">+7 (000) 000-00-00</p>
-        <p class="contacts-left mail">почта@yandex-team.ru</p>
-        <p class="contacts-right contacts-top twitter">@twitter</p>
-        <!-- <p class="contacts-right contacts-bottom vk">vk</p> -->
-        <p class="contacts-right facebook">facebook</p>
-    </div>
-</div>
+[okmeter.io](https://okmeter.io)
+
+## OkMeter
+{:.screen-shot}
+
+<img src="pictures/okmeter.png" height="570">
+
+## OkMeter
+
+<img src="pictures/okmeter-common-1.png" width="800">
+
+## OkMeter
+
+<img src="pictures/okmeter-fs.png" width="900">
+
+## OkMeter
+
+<img src="pictures/okmeter-net.png" width="900">
+
+## OkMeter
+
+<img src="pictures/okmeter-processes.png" width="900">
+
+## OkMeter
+
+<img src="pictures/okmeter-nginx.png" height="520">
+
+## OkMeter
+
+<img src="pictures/okmeter-trigger.png" width="900">
+
+## OkMeter
+
+<img src="pictures/okmeter-contacts.png" height="450">
+
+## &nbsp;
+{:.section}
+
+### Заключение
+
+## Инфраструктура
+
+<table>
+  <tr>
+    <td>Железо, системное ПО</td>
+    <td><input type="checkbox" style="vertical-align: middle" checked=""> <label style="vertical-align: middle">Хостинг</label></td>
+  </tr>
+  <tr>
+    <td>Инструментарий разработки</td>
+    <td><input type="checkbox" style="vertical-align: middle" checked=""> <label style="vertical-align: middle">GitHub, Vagrant и т. д.</label></td>
+  </tr>
+  <tr>
+    <td>Корректная интеграция изменений</td>
+    <td><input type="checkbox" style="vertical-align: middle" checked=""> <label style="vertical-align: middle">Travis CI, Jenkins, TeamCity</label></td>
+  </tr>
+  <tr>
+    <td>Быстрая доставка фич</td>
+    <td><input type="checkbox" style="vertical-align: middle" checked=""> <label style="vertical-align: middle">Автотесты, Continuous Deployment</label></td>
+  </tr>
+  <tr>
+    <td>Релизный цикл с возможностью отката</td>
+    <td><input type="checkbox" style="vertical-align: middle" checked=""> <label style="vertical-align: middle">ShipIt</label></td>
+  </tr>
+  <tr>
+    <td>Мониторинг здоровья сервиса</td>
+    <td><input type="checkbox" style="vertical-align: middle" checked=""> <label style="vertical-align: middle">Яндекс.Метрика, Uptime Robot, OkMeter</label></td>
+  </tr>
+</table>
+
+## &nbsp;
+{:.section}
+
+### Спасибо за внимание!

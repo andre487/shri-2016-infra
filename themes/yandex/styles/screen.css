@@ -3,7 +3,7 @@
 
 body
 {
-    font: 25px/2 Textbook, Arial;
+    font: 25px/2 'Yandex Sans Display', Textbook, Arial;
     font-weight: lighter;
 }
 
@@ -16,6 +16,11 @@ body.list
 .caption a
 {
     color: white !important;
+}
+
+#cover
+{
+    background: rgb(254, 208, 3);
 }
 
 /* Slide
@@ -56,20 +61,6 @@ body .slide:first-of-type h2,
 {
     font-family: 'YandexRu';
     font-weight: normal;
-}
-
-.slide#cover > div::before
-{
-    content: 'Я';
-
-    color: #f00;
-}
-
-.slide#cover > div::after
-{
-    margin-left: .45em;
-
-    content: 'ндекс';
 }
 
 .slide#cover .author,
@@ -348,7 +339,7 @@ body .slide:first-of-type h2::first-letter
 
 body .slide:first-of-type
 {
-    background: #fff;
+    background: rgb(254, 208, 3);
 }
 body .slide:first-of-type h2
 {
@@ -382,7 +373,7 @@ body .slide:first-of-type h2
 /* Section */
 .slide.section
 {
-    background: rgb(254,195,0);
+    background: rgb(254, 208, 3);
 }
 
 .slide.section h2
@@ -396,7 +387,12 @@ body .slide:first-of-type h2
 {
     margin: 0 0 60px 0;
 
-    font: 50px Textbook, Arial;
+    font: 50px 'Yandex Sans Display', Textbook, Arial;
+}
+
+.slide.screen-shot h2
+{
+    margin: 0;
 }
 
 .slide h3,
