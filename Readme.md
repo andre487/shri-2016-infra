@@ -3,3 +3,5 @@
 Презентация для лекции в ШРИ. Москва, 2016 год
 
 Посмотреть презантацию можно на [GitHub Pages](https://andre487.github.io/shri-2016-infra/)
+
+[Дополнительные материалы](https://gist.github.com/andre487/beb49c2e47d51f7e327f9646081a1758)
